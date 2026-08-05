@@ -3,248 +3,1001 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Altafur Rahman Fuad — Flutter Developer &amp; CS Undergrad</title>
+<title>Altafur Rahman Fuad — Flutter Developer & CS Undergrad</title>
 <meta name="description" content="Altafur Rahman Fuad — Flutter developer and CS undergraduate at BGC Trust University Bangladesh, building AI-powered agriculture research and full-stack mobile apps.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dela+Gothic+One&family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink:#0e1811;
-    --panel:#142219;
-    --panel-2:#182819;
-    --paper:#eef0e2;
-    --paper-dim:#b9c2ac;
-    --line:#2a3a2a;
-    --accent-field:#8fae5a;
-    --accent-gold:#cf9f4d;
-    --branch-disease:#4f9d8f;
-    --branch-pest:#c97a4a;
-    --radius:2px;
-    --max:1120px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--ink);
-    color:var(--paper);
-    font-family:'Inter',sans-serif;
-    font-size:16px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,.display{
-    font-family:'Fraunces',serif;
-    font-weight:600;
-    letter-spacing:-0.01em;
-    margin:0;
-  }
-  .mono{
-    font-family:'IBM Plex Mono',monospace;
-  }
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
-  @media(max-width:640px){.wrap{padding:0 20px;}}
+/* ============================================================
+   WATER HASHIRA X SOLO LEVELING MONARCH ANIME THEME
+   Electric Water Cyan + Shadow Monarch Purple + Dark Abyss
+   ============================================================ */
+:root {
+  /* Dark Shadow Abyss Backgrounds */
+  --bg-dark:       #080b14;
+  --bg-deep:       #0e1322;
+  --bg-panel:      rgba(14, 19, 36, 0.88);
+  --bg-card:       rgba(18, 25, 46, 0.78);
+  --bg-card-hover: rgba(26, 36, 66, 0.95);
 
-  /* background texture: faint ledger rule lines */
-  body::before{
-    content:"";
-    position:fixed;inset:0;
-    pointer-events:none;
-    z-index:0;
-    background-image:repeating-linear-gradient(to bottom, transparent 0 38px, rgba(238,240,226,0.025) 38px 39px);
+  /* High Contrast Readable Text */
+  --text-white:    #ffffff;
+  --text-bright:   #e2e8f0;
+  --text-dim:      #94a3b8;
+  --text-muted:    #64748b;
+
+  /* Water Hashira (Demon Slayer) & Shadow Monarch (Solo Leveling) Accents */
+  --water-cyan:    #00f0ff;
+  --water-blue:    #0088ff;
+  --monarch-purple:#9d4edf;
+  --monarch-violet:#7c3aed;
+  --monarch-glow:  #a855f7;
+
+  /* Borders & Glow Shadows */
+  --border:        rgba(0, 240, 255, 0.15);
+  --border-cyan:   rgba(0, 240, 255, 0.4);
+  --border-purple: rgba(157, 78, 223, 0.4);
+  --border-hover:  rgba(0, 240, 255, 0.65);
+  --glow-cyan:     rgba(0, 240, 255, 0.3);
+  --glow-purple:   rgba(157, 78, 223, 0.3);
+
+  /* Layout */
+  --max-w: 1140px;
+  --radius: 8px;
+  --radius-sm: 4px;
+}
+
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-bright);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; }
+@media (max-width: 640px) { .wrap { padding: 0 20px; } }
+
+/* Water Breathing + Shadow Monarch Ambient Background */
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(0, 240, 255, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 65%, rgba(157, 78, 223, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 50% 95%, rgba(0, 136, 255, 0.08) 0%, transparent 40%);
+}
+
+/* Water Wave & Shadow Aura Overlay Grid */
+body::after {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(157, 78, 223, 0.03) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--water-cyan), var(--monarch-purple));
+  border-radius: 3px;
+}
+
+/* ========== CONTENT LAYER ========== */
+#content-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+/* ========== NAV ========== */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(8, 11, 20, 0.88);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  border-bottom: 1px solid var(--border);
+}
+
+nav.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 1.1rem;
+  color: var(--text-white);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.brand-icon {
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--bg-dark);
+  background: linear-gradient(135deg, var(--water-cyan), var(--monarch-purple));
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 14px var(--glow-cyan);
+}
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+}
+
+.nav-links a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  position: relative;
+  transition: all 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 4px; left: 50%; transform: translateX(-50%);
+  width: 0; height: 2px;
+  background: var(--water-cyan);
+  box-shadow: 0 0 8px var(--water-cyan);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--text-white);
+  background: rgba(0, 240, 255, 0.1);
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 60%; }
+.nav-links a.active { color: var(--water-cyan); }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--water-cyan);
+  width: 42px; height: 42px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: all 0.3s;
+}
+.nav-toggle:hover { border-color: var(--water-cyan); }
+
+@media (max-width: 760px) {
+  .nav-links {
+    position: absolute;
+    top: 68px; left: 0; right: 0;
+    background: rgba(8, 11, 20, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column; gap: 0;
+    border-bottom: 1px solid var(--border);
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
-
-  /* ---------- nav ---------- */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:rgba(14,24,17,0.88);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
+  .nav-links.open { max-height: 500px; }
+  .nav-links a {
+    padding: 16px 28px;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
   }
-  nav.wrap{
-    display:flex;align-items:center;justify-content:space-between;
-    height:64px;
-  }
-  .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;}
-  .brand svg{width:26px;height:26px;flex-shrink:0;}
-  .nav-links{display:flex;gap:28px;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.04em;text-transform:uppercase;}
-  .nav-links a{color:var(--paper-dim);transition:color .2s;padding:4px 0;border-bottom:1px solid transparent;}
-  .nav-links a:hover{color:var(--accent-field);border-color:var(--accent-field);}
-  .nav-toggle{display:none;background:none;border:1px solid var(--line);color:var(--paper);width:38px;height:38px;border-radius:var(--radius);cursor:pointer;font-family:'IBM Plex Mono',monospace;}
-  @media(max-width:760px){
-    .nav-links{position:absolute;top:64px;left:0;right:0;background:var(--panel);flex-direction:column;gap:0;border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .25s ease;}
-    .nav-links.open{max-height:400px;}
-    .nav-links a{padding:14px 28px;border-bottom:1px solid var(--line);width:100%;}
-    .nav-toggle{display:block;}
-  }
+  .nav-links a::after { display: none; }
+  .nav-toggle { display: flex; align-items: center; justify-content: center; }
+}
 
-  /* ---------- eyebrow / entry labels ---------- */
-  .entry-label{
-    display:flex;align-items:center;gap:12px;
-    font-family:'IBM Plex Mono',monospace;
-    font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;
-    color:var(--accent-gold);
-    margin-bottom:18px;
-  }
-  .entry-label .num{color:var(--paper-dim);}
-  .entry-label::after{content:"";flex:1;height:1px;background:var(--line);}
+/* ========== SECTION BASE ========== */
+section {
+  position: relative;
+  z-index: 2;
+  padding: 100px 0;
+}
+@media (max-width: 640px) { section { padding: 70px 0; } }
 
-  section{position:relative;z-index:1;padding:96px 0;border-bottom:1px solid var(--line);}
-  @media(max-width:640px){section{padding:64px 0;}}
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 44px;
+}
+.section-label .num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  color: var(--monarch-purple);
+  text-shadow: 0 0 10px var(--glow-purple);
+}
+.section-label .label-text {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-white);
+}
+.section-label::after {
+  content: "";
+  flex: 1; height: 2px;
+  background: linear-gradient(to right, var(--water-cyan), var(--monarch-purple), transparent);
+  opacity: 0.4;
+}
 
-  /* ---------- hero ---------- */
-  .hero{padding-top:64px;border-bottom:1px solid var(--line);}
-  .hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;}
-  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:40px;}}
-  .stamp-row{display:flex;align-items:center;gap:10px;margin-bottom:22px;}
-  .stamp{
-    font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;
-    border:1px solid var(--accent-field);color:var(--accent-field);
-    padding:5px 10px;border-radius:var(--radius);
-  }
-  .stamp.gold{border-color:var(--accent-gold);color:var(--accent-gold);}
-  h1.name{font-size:clamp(2.4rem,5.4vw,3.6rem);line-height:1.06;}
-  .tagline{margin-top:18px;font-size:1.15rem;color:var(--paper-dim);max-width:52ch;}
-  .hero-meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 24px;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--paper-dim);}
-  .hero-meta span b{color:var(--paper);font-weight:500;}
-  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;}
-  .btn{
-    font-family:'IBM Plex Mono',monospace;font-size:0.82rem;letter-spacing:0.03em;text-transform:uppercase;
-    padding:13px 22px;border-radius:var(--radius);border:1px solid var(--accent-field);
-    display:inline-flex;align-items:center;gap:8px;transition:all .2s;
-  }
-  .btn.primary{background:var(--accent-field);color:var(--ink);}
-  .btn.primary:hover{background:#a2c473;}
-  .btn.ghost{color:var(--paper);border-color:var(--line);}
-  .btn.ghost:hover{border-color:var(--paper-dim);}
+/* ========== HERO ========== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 68px;
+  position: relative;
+  overflow: hidden;
+}
 
-  .portrait-card{
-    background:var(--panel);border:1px solid var(--line);padding:14px;border-radius:var(--radius);
-    position:relative;
-  }
-  .portrait-card img{border-radius:1px;filter:grayscale(8%) contrast(1.02);width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top center;}
-  .portrait-tag{
-    position:absolute;bottom:-14px;left:24px;background:var(--ink);border:1px solid var(--accent-gold);
-    padding:6px 12px;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-gold);
-  }
+/* Kanji Background Watermark — 水柱 · 影の君主 (Water Hashira · Shadow Monarch) */
+.hero::before {
+  content: "水柱影君";
+  position: absolute;
+  right: -20px; top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: clamp(8rem, 20vw, 16rem);
+  color: rgba(0, 240, 255, 0.03);
+  writing-mode: vertical-rl;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
 
-  /* ---------- signature dual-branch divider ---------- */
-  .branch-divider{display:flex;justify-content:center;padding:36px 0;}
-  .branch-divider svg{width:180px;height:auto;opacity:0.85;}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero::before { display: none; }
+}
 
-  /* ---------- about ---------- */
-  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;}
-  @media(max-width:800px){.about-grid{grid-template-columns:1fr;}}
-  .about-grid p{color:var(--paper-dim);font-size:1.02rem;max-width:60ch;}
-  .fact-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);}
-  .fact-list div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:0.85rem;}
-  .fact-list div span:first-child{color:var(--paper-dim);}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
 
-  /* ---------- education ---------- */
-  .edu-list{display:flex;flex-direction:column;}
-  .edu-row{
-    display:grid;grid-template-columns:120px 1fr auto;gap:20px;align-items:baseline;
-    padding:22px 0;border-top:1px solid var(--line);
-  }
-  .edu-row:last-child{border-bottom:1px solid var(--line);}
-  @media(max-width:640px){.edu-row{grid-template-columns:1fr;gap:6px;}}
-  .edu-year{font-family:'IBM Plex Mono',monospace;color:var(--accent-gold);font-size:0.85rem;}
-  .edu-name h3{font-size:1.15rem;font-weight:500;}
-  .edu-name p{margin:4px 0 0;color:var(--paper-dim);font-size:0.92rem;}
-  .gpa-badge{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--accent-field);border:1px solid var(--accent-field);padding:4px 10px;border-radius:var(--radius);white-space:nowrap;height:fit-content;}
+.badge {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: var(--radius-sm);
+}
+.badge.cyan {
+  border: 1px solid var(--water-cyan);
+  color: var(--water-cyan);
+  background: rgba(0, 240, 255, 0.1);
+  box-shadow: 0 0 12px var(--glow-cyan);
+}
+.badge.purple {
+  border: 1px solid var(--monarch-purple);
+  color: var(--monarch-purple);
+  background: rgba(157, 78, 223, 0.1);
+  box-shadow: 0 0 12px var(--glow-purple);
+}
 
-  /* ---------- research ---------- */
-  .thesis-card{
-    background:var(--panel);border:1px solid var(--line);padding:36px;border-radius:var(--radius);
-    position:relative;overflow:hidden;
-  }
-  .thesis-card::before{
-    content:"";position:absolute;top:0;left:0;width:4px;height:100%;
-    background:linear-gradient(to bottom, var(--branch-disease), var(--branch-pest));
-  }
-  .thesis-status{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-gold);border:1px solid var(--accent-gold);padding:5px 10px;border-radius:var(--radius);margin-bottom:18px;}
-  .thesis-card h3{font-size:1.5rem;margin-bottom:8px;}
-  .thesis-sub{color:var(--paper-dim);font-size:0.95rem;margin-bottom:18px;}
-  .thesis-card p.desc{color:var(--paper-dim);max-width:70ch;margin-bottom:24px;}
-  .branch-tags{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;}
-  .btag{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;padding:5px 10px;border-radius:var(--radius);border:1px solid;}
-  .btag.dis{color:var(--branch-disease);border-color:var(--branch-disease);}
-  .btag.pest{color:var(--branch-pest);border-color:var(--branch-pest);}
-  .thesis-links{display:flex;gap:14px;flex-wrap:wrap;}
-  .thesis-links a{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--paper);border-bottom:1px solid var(--accent-field);padding-bottom:2px;}
-  .thesis-links a:hover{color:var(--accent-field);}
+.hero-name {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--text-white);
+  text-shadow: 0 0 30px rgba(0, 240, 255, 0.25);
+}
 
-  .research-sub-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;}
-  @media(max-width:700px){.research-sub-grid{grid-template-columns:1fr;}}
-  .research-sub{border:1px solid var(--line);padding:22px;border-radius:var(--radius);}
-  .research-sub .tag{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--paper-dim);}
-  .research-sub h4{font-family:'Fraunces',serif;font-weight:500;font-size:1.05rem;margin:8px 0 6px;}
-  .research-sub p{color:var(--paper-dim);font-size:0.9rem;margin:0;}
+.hero-name .accent {
+  background: linear-gradient(135deg, var(--water-cyan), var(--water-blue), var(--monarch-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  /* ---------- projects ---------- */
-  .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
-  @media(max-width:760px){.proj-grid{grid-template-columns:1fr;}}
-  .proj-card{
-    border:1px solid var(--line);padding:26px;border-radius:var(--radius);
-    display:flex;flex-direction:column;gap:14px;transition:border-color .2s, transform .2s;
-  }
-  .proj-card:hover{border-color:var(--accent-field);transform:translateY(-2px);}
-  .proj-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
-  .proj-card h3{font-size:1.15rem;font-weight:500;}
-  .proj-status{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--paper-dim);border:1px solid var(--line);padding:3px 8px;border-radius:var(--radius);white-space:nowrap;}
-  .proj-status.live{color:var(--accent-field);border-color:var(--accent-field);}
-  .proj-card p{color:var(--paper-dim);font-size:0.92rem;margin:0;flex:1;}
-  .proj-stack{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:var(--branch-disease);}
-  .proj-link{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;border-bottom:1px solid var(--accent-field);width:fit-content;padding-bottom:2px;}
-  .proj-link:hover{color:var(--accent-field);}
-  .proj-card.full{grid-column:1/-1;}
+.tagline {
+  margin-top: 22px;
+  font-size: 1.2rem;
+  color: var(--text-bright);
+  max-width: 52ch;
+  line-height: 1.75;
+  font-weight: 500;
+}
+.tagline .typed-text { color: var(--water-cyan); }
+.tagline .cursor-blink {
+  display: inline-block;
+  width: 3px; height: 1.15em;
+  background: var(--water-cyan);
+  box-shadow: 0 0 8px var(--water-cyan);
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
 
-  /* ---------- skills ---------- */
-  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
-  @media(max-width:700px){.skills-grid{grid-template-columns:1fr;}}
-  .skill-group h3{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-gold);margin-bottom:16px;font-weight:500;}
-  .pill-row{display:flex;flex-wrap:wrap;gap:10px;}
-  .pill{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;border:1px solid var(--line);padding:7px 12px;border-radius:var(--radius);color:var(--paper);}
-  .pill.learning{color:var(--paper-dim);border-style:dashed;}
+.hero-meta {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+.hero-meta span b {
+  color: var(--text-white);
+  font-weight: 600;
+}
+.hero-meta span::before {
+  content: "🌊 ";
+  color: var(--water-cyan);
+}
 
-  /* ---------- contact ---------- */
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
-  @media(max-width:760px){.contact-grid{grid-template-columns:1fr;}}
-  .contact-list div{display:flex;justify-content:space-between;padding:16px 0;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:0.88rem;gap:16px;flex-wrap:wrap;}
-  .contact-list div:last-child{border-bottom:1px solid var(--line);}
-  .contact-list span:first-child{color:var(--paper-dim);}
-  .social-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px;}
-  .social-row a{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;border:1px solid var(--line);padding:9px 16px;border-radius:var(--radius);}
-  .social-row a:hover{border-color:var(--accent-field);color:var(--accent-field);}
-  .contact-note{color:var(--paper-dim);font-size:0.95rem;max-width:48ch;}
+.hero-cta {
+  margin-top: 36px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
 
-  footer{padding:36px 0;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--paper-dim);}
+.btn {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  border: 2px solid;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
 
-  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
-  .reveal.visible{opacity:1;transform:none;}
-  @media (prefers-reduced-motion: reduce){
-    .reveal{opacity:1;transform:none;transition:none;}
-    html{scroll-behavior:auto;}
-  }
+.btn.primary {
+  background: linear-gradient(135deg, var(--water-cyan), var(--water-blue));
+  border-color: var(--water-cyan);
+  color: var(--bg-dark);
+  box-shadow: 0 0 20px var(--glow-cyan);
+  font-weight: 700;
+}
+.btn.primary:hover {
+  box-shadow: 0 0 30px var(--glow-cyan), 0 6px 24px rgba(157, 78, 223, 0.4);
+  transform: translateY(-3px);
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--water-blue), var(--monarch-purple));
+}
+
+.btn.ghost {
+  background: rgba(14, 19, 36, 0.6);
+  border-color: var(--border);
+  color: var(--text-white);
+}
+.btn.ghost:hover {
+  border-color: var(--monarch-purple);
+  color: var(--monarch-purple);
+  box-shadow: 0 0 20px var(--glow-purple);
+  transform: translateY(-3px);
+}
+
+/* ========== PORTRAIT ========== */
+.portrait-card {
+  position: relative;
+  perspective: 800px;
+}
+
+.portrait-inner {
+  background: var(--bg-panel);
+  border: 2px solid var(--border-cyan);
+  border-radius: var(--radius);
+  padding: 12px;
+  position: relative;
+  box-shadow: 0 0 35px var(--glow-cyan), 0 0 50px var(--glow-purple);
+  transition: transform 0.5s cubic-bezier(0.03, 0.98, 0.52, 0.99), box-shadow 0.5s;
+}
+.portrait-inner:hover {
+  border-color: var(--monarch-purple);
+  box-shadow: 0 0 55px var(--glow-purple), 0 0 80px var(--glow-cyan);
+}
+
+.portrait-inner img {
+  border-radius: var(--radius-sm);
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top center;
+  filter: contrast(1.05) saturate(1.1);
+}
+
+/* Anime Frame Corners */
+.portrait-inner::before,
+.portrait-inner::after {
+  content: "";
+  position: absolute;
+  width: 36px; height: 36px;
+  border: 3px solid var(--water-cyan);
+  transition: all 0.4s;
+}
+.portrait-inner::before {
+  top: -2px; left: -2px;
+  border-right: none; border-bottom: none;
+}
+.portrait-inner::after {
+  bottom: -2px; right: -2px;
+  border-left: none; border-top: none;
+}
+.portrait-inner:hover::before,
+.portrait-inner:hover::after {
+  border-color: var(--monarch-purple);
+  width: 46px; height: 46px;
+}
+
+.portrait-tag {
+  position: absolute;
+  bottom: 0; left: 24px;
+  background: var(--bg-dark);
+  border: 1px solid var(--water-cyan);
+  padding: 8px 18px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--water-cyan);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  box-shadow: 0 0 14px var(--glow-cyan);
+}
+
+/* ========== ABOUT ========== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 50px;
+}
+@media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } }
+
+.about-text {
+  color: var(--text-bright);
+  font-size: 1.1rem;
+  line-height: 1.85;
+}
+
+.fact-list { display: flex; flex-direction: column; }
+
+.fact-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.88rem;
+  transition: background 0.3s;
+}
+.fact-row:first-child { border-top: 1px solid var(--border); }
+.fact-row:hover { background: rgba(0, 240, 255, 0.04); }
+.fact-key { color: var(--text-dim); }
+.fact-val { color: var(--text-white); font-weight: 600; text-align: right; }
+
+/* ========== EDUCATION ========== */
+.edu-list { display: flex; flex-direction: column; gap: 12px; }
+
+.edu-row {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all 0.35s;
+}
+.edu-row:hover {
+  border-color: var(--border-cyan);
+  background: var(--bg-card-hover);
+  box-shadow: 0 8px 30px var(--glow-cyan);
+}
+@media (max-width: 700px) {
+  .edu-row { grid-template-columns: 1fr; gap: 8px; padding: 20px; }
+}
+
+.edu-year {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  color: var(--water-cyan);
+}
+
+.edu-name h3 {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 1.05rem;
+  color: var(--text-white);
+}
+.edu-name p {
+  margin-top: 4px;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.gpa-badge {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  color: var(--monarch-purple);
+  border: 1px solid var(--monarch-purple);
+  padding: 6px 16px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  background: rgba(157, 78, 223, 0.1);
+  box-shadow: 0 0 10px rgba(157, 78, 223, 0.2);
+}
+
+/* ========== RESEARCH ========== */
+.thesis-card {
+  background: var(--bg-panel);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-cyan);
+  border-radius: var(--radius);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.thesis-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: linear-gradient(to bottom, var(--water-cyan), var(--water-blue), var(--monarch-purple));
+  box-shadow: 0 0 15px var(--glow-cyan);
+}
+
+.thesis-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--water-cyan);
+  border: 1px solid var(--water-cyan);
+  padding: 6px 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+  background: rgba(0, 240, 255, 0.1);
+}
+.thesis-status::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--water-cyan);
+  box-shadow: 0 0 8px var(--water-cyan);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.thesis-card h3 {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: var(--text-white);
+  letter-spacing: 0.02em;
+}
+
+.thesis-sub {
+  color: var(--water-cyan);
+  font-size: 1rem;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.thesis-card p.desc {
+  color: var(--text-bright);
+  max-width: 72ch;
+  margin-bottom: 24px;
+  line-height: 1.85;
+}
+
+.branch-tags { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+
+.btag {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.78rem;
+  padding: 6px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+  transition: all 0.3s;
+}
+.btag.dis {
+  color: var(--water-cyan);
+  border-color: var(--water-cyan);
+  background: rgba(0, 240, 255, 0.1);
+}
+.btag.pest {
+  color: var(--monarch-purple);
+  border-color: var(--monarch-purple);
+  background: rgba(157, 78, 223, 0.1);
+}
+
+.thesis-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.thesis-links a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: var(--water-cyan);
+  position: relative;
+  transition: all 0.3s;
+}
+.thesis-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 100%; height: 2px;
+  background: var(--water-cyan);
+  box-shadow: 0 0 8px var(--water-cyan);
+  opacity: 0.4;
+  transition: opacity 0.3s;
+}
+.thesis-links a:hover { color: var(--text-white); }
+.thesis-links a:hover::after { opacity: 1; }
+
+.research-sub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px; margin-top: 24px;
+}
+@media (max-width: 700px) { .research-sub-grid { grid-template-columns: 1fr; } }
+
+.research-sub {
+  border: 1px solid var(--border);
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  transition: all 0.35s;
+}
+.research-sub:hover {
+  border-color: var(--border-cyan);
+  background: var(--bg-card-hover);
+  box-shadow: 0 8px 30px var(--glow-cyan);
+}
+.research-sub .tag {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--monarch-purple);
+}
+.research-sub h4 {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 1.1rem;
+  margin: 10px 0 8px;
+  color: var(--text-white);
+}
+.research-sub p { color: var(--text-dim); font-size: 0.95rem; }
+
+/* ========== PROJECTS ========== */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+@media (max-width: 760px) { .proj-grid { grid-template-columns: 1fr; } }
+
+.proj-card {
+  border: 1px solid var(--border);
+  padding: 28px;
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  display: flex; flex-direction: column; gap: 14px;
+  transition: all 0.4s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+  position: relative; overflow: hidden;
+}
+
+.proj-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--water-cyan), var(--monarch-purple));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.proj-card:hover::before { opacity: 1; }
+.proj-card:hover {
+  border-color: var(--border-cyan);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px var(--glow-cyan);
+  background: var(--bg-card-hover);
+}
+
+.proj-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+
+.proj-card h3 {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 1.15rem;
+  color: var(--text-white);
+}
+
+.proj-status {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  white-space: nowrap; flex-shrink: 0;
+}
+.proj-status.live {
+  color: var(--water-cyan);
+  border-color: var(--water-cyan);
+  background: rgba(0, 240, 255, 0.1);
+  box-shadow: 0 0 10px var(--glow-cyan);
+}
+.proj-status.live::before {
+  content: "";
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--water-cyan);
+  margin-right: 6px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.proj-card p { color: var(--text-bright); font-size: 0.95rem; flex: 1; }
+.proj-stack {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.78rem;
+  color: var(--monarch-purple);
+}
+.proj-link {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  color: var(--water-cyan);
+  width: fit-content;
+  transition: all 0.3s;
+  position: relative;
+}
+.proj-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 100%; height: 2px;
+  background: var(--water-cyan);
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+.proj-link:hover { color: var(--text-white); }
+.proj-link:hover::after { opacity: 1; }
+
+.proj-card.full { grid-column: 1 / -1; }
+
+/* ========== SKILLS ========== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+@media (max-width: 700px) { .skills-grid { grid-template-columns: 1fr; } }
+
+.skill-group h3 {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  color: var(--water-cyan);
+  margin-bottom: 18px;
+}
+
+.pill-row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.pill {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.82rem;
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  color: var(--text-white);
+  background: var(--bg-card);
+  transition: all 0.3s;
+}
+.pill:hover {
+  border-color: var(--water-cyan);
+  color: var(--water-cyan);
+  box-shadow: 0 0 14px var(--glow-cyan);
+  transform: translateY(-2px);
+}
+
+.pill.learning {
+  color: var(--text-dim);
+  border-style: dashed;
+}
+.pill.learning:hover {
+  border-color: var(--monarch-purple);
+  color: var(--monarch-purple);
+  border-style: solid;
+  box-shadow: 0 0 14px var(--glow-purple);
+}
+
+/* ========== CONTACT ========== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+@media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } }
+
+.contact-note {
+  color: var(--text-bright);
+  font-size: 1.05rem;
+  max-width: 48ch;
+  margin-bottom: 28px;
+  line-height: 1.8;
+}
+
+.contact-list .c-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.88rem;
+  gap: 16px; flex-wrap: wrap;
+  transition: background 0.3s;
+}
+.contact-list .c-row:first-child { border-top: 1px solid var(--border); }
+.contact-list .c-row:hover { background: rgba(0, 240, 255, 0.04); }
+.c-key { color: var(--text-dim); }
+.c-val { color: var(--text-white); font-weight: 600; }
+
+.social-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.social-row a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  color: var(--text-bright);
+  background: var(--bg-card);
+  transition: all 0.3s;
+}
+.social-row a:hover {
+  border-color: var(--water-cyan);
+  color: var(--water-cyan);
+  box-shadow: 0 0 18px var(--glow-cyan);
+  transform: translateY(-2px);
+}
+
+/* ========== FOOTER ========== */
+footer {
+  position: relative; z-index: 2;
+  text-align: center;
+  padding: 40px 0;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+footer::before {
+  content: "";
+  display: block;
+  width: 200px; height: 2px;
+  margin: 0 auto 24px;
+  background: linear-gradient(to right, transparent, var(--water-cyan), var(--monarch-purple), transparent);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ========== SCROLL REVEAL ========== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children .reveal:nth-child(1) { transition-delay: 0.05s; }
+.stagger-children .reveal:nth-child(2) { transition-delay: 0.1s; }
+.stagger-children .reveal:nth-child(3) { transition-delay: 0.15s; }
+.stagger-children .reveal:nth-child(4) { transition-delay: 0.2s; }
+.stagger-children .reveal:nth-child(5) { transition-delay: 0.25s; }
+.stagger-children .reveal:nth-child(6) { transition-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+  .tagline .cursor-blink { animation: none; }
+}
+
+/* ========== ANIME QUOTE DIVIDER ========== */
+.anime-divider {
+  text-align: center;
+  padding: 48px 0;
+  position: relative;
+  z-index: 2;
+}
+.anime-divider .line {
+  width: 140px; height: 2px;
+  background: linear-gradient(to right, transparent, var(--water-cyan), var(--monarch-purple), transparent);
+  margin: 0 auto 20px;
+}
+.anime-divider blockquote {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 1.15rem;
+  color: var(--text-white);
+  letter-spacing: 0.02em;
+}
+.anime-divider .attr {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  color: var(--water-cyan);
+  margin-top: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
 </style>
 </head>
 <body>
 
+<div id="content-wrap">
+
+<!-- NAV -->
 <header>
   <nav class="wrap">
     <a href="#top" class="brand">
-      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16 4 L16 14" stroke="#8fae5a" stroke-width="2"/>
-        <path d="M16 14 C16 14 9 16 7 24" stroke="#4f9d8f" stroke-width="2" fill="none"/>
-        <path d="M16 14 C16 14 23 16 25 24" stroke="#c97a4a" stroke-width="2" fill="none"/>
-        <circle cx="16" cy="4" r="2.5" fill="#cf9f4d"/>
-      </svg>
+      <span class="brand-icon">AF</span>
       A. R. Fuad
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">≡</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#education">Education</a>
@@ -258,47 +1011,53 @@
 
 <main id="top">
 
-  <!-- HERO -->
+  <!-- ==================== HERO ==================== -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="stamp-row">
-          <span class="stamp">Field Log · Entry 000</span>
-          <span class="stamp gold">8th Semester Running</span>
+        <div class="hero-badges reveal">
+          <span class="badge cyan">Water Breathing · Entry 000</span>
+          <span class="badge purple">Shadow Monarch · 8th Sem</span>
         </div>
-        <h1 class="name">Altafur Rahman<br>Fuad</h1>
-        <p class="tagline">Flutter developer &amp; CS undergrad — building AI-powered agriculture research and full-stack mobile apps.</p>
-        <div class="hero-meta">
+        <h1 class="hero-name reveal">Altafur<br>Rahman <span class="accent">Fuad</span></h1>
+        <p class="tagline reveal">
+          <span class="typed-text" id="typedText"></span><span class="cursor-blink"></span>
+        </p>
+        <div class="hero-meta reveal">
           <span>Based in <b>Chandanaish, Bangladesh</b></span>
           <span>Studying at <b>BGC Trust University Bangladesh</b></span>
           <span><b>Currently seeking opportunities</b></span>
         </div>
-        <div class="hero-cta">
+        <div class="hero-cta reveal">
           <a href="#research" class="btn primary">View Research →</a>
           <a href="#contact" class="btn ghost">Get in Touch</a>
         </div>
       </div>
       <div class="portrait-card reveal">
-        <img src="assets/fuad-photo.jpeg" alt="Portrait of Altafur Rahman Fuad">
-        <div class="portrait-tag">CSE · BGC Trust University</div>
+        <div class="portrait-inner" id="portraitTilt">
+          <img src="assets/fuad-anime-water-monarch.png" alt="Portrait of Altafur Rahman Fuad — Water Hashira x Solo Leveling Style">
+          <div class="portrait-tag">CSE · BGC Trust University</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="branch-divider">
-    <svg viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M100 0 L100 16" stroke="#8fae5a" stroke-width="1.5"/>
-      <path d="M100 16 C100 16 40 20 20 40" stroke="#4f9d8f" stroke-width="1.5" fill="none"/>
-      <path d="M100 16 C100 16 160 20 180 40" stroke="#c97a4a" stroke-width="1.5" fill="none"/>
-    </svg>
+  <!-- Anime Quote Divider -->
+  <div class="anime-divider reveal">
+    <div class="line"></div>
+    <blockquote>"I will fulfill my duty! I will not allow anyone here to die!"</blockquote>
+    <p class="attr">— Giyu Tomioka, Demon Slayer (Water Hashira)</p>
   </div>
 
-  <!-- ABOUT -->
+  <!-- ==================== ABOUT ==================== -->
   <section id="about">
     <div class="wrap">
-      <div class="entry-label"><span class="num">Entry No. 00</span> About</div>
+      <div class="section-label reveal">
+        <span class="num">00</span>
+        <span class="label-text">About</span>
+      </div>
       <div class="about-grid">
-        <p class="reveal">
+        <p class="about-text reveal">
           I'm a Computer Science &amp; Engineering undergraduate at BGC Trust University Bangladesh,
           currently in my 8th semester. My work sits at the intersection of full-stack mobile
           development and applied AI research — on one side, I build production-ready Flutter apps
@@ -308,23 +1067,26 @@
           published work.
         </p>
         <div class="fact-list reveal">
-          <div><span>Location</span><span>Chattogram, Bangladesh</span></div>
-          <div><span>University</span><span>BGC Trust University Bangladesh</span></div>
-          <div><span>Program</span><span>BSc in CSE — Session Jan–Jun 2026</span></div>
-          <div><span>Student ID</span><span>230240006</span></div>
-          <div><span>Focus</span><span>Flutter Development · AI/ML Research</span></div>
-          <div><span>Status</span><span>Seeking opportunities</span></div>
+          <div class="fact-row"><span class="fact-key">Location</span><span class="fact-val">Chattogram, Bangladesh</span></div>
+          <div class="fact-row"><span class="fact-key">University</span><span class="fact-val">BGC Trust University Bangladesh</span></div>
+          <div class="fact-row"><span class="fact-key">Program</span><span class="fact-val">BSc in CSE — Session Jan–Jun 2026</span></div>
+          <div class="fact-row"><span class="fact-key">Student ID</span><span class="fact-val">230240006</span></div>
+          <div class="fact-row"><span class="fact-key">Focus</span><span class="fact-val">Flutter Development · AI/ML Research</span></div>
+          <div class="fact-row"><span class="fact-key">Status</span><span class="fact-val">Seeking opportunities</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EDUCATION -->
+  <!-- ==================== EDUCATION ==================== -->
   <section id="education">
     <div class="wrap">
-      <div class="entry-label"><span class="num">Entry No. 01</span> Education</div>
-      <div class="edu-list reveal">
-        <div class="edu-row">
+      <div class="section-label reveal">
+        <span class="num">01</span>
+        <span class="label-text">Education</span>
+      </div>
+      <div class="edu-list stagger-children">
+        <div class="edu-row reveal">
           <div class="edu-year">2026 — Running</div>
           <div class="edu-name">
             <h3>BSc in Computer Science &amp; Engineering</h3>
@@ -332,7 +1094,7 @@
           </div>
           <span class="gpa-badge">In Progress</span>
         </div>
-        <div class="edu-row">
+        <div class="edu-row reveal">
           <div class="edu-year">2020</div>
           <div class="edu-name">
             <h3>Higher Secondary Certificate (HSC)</h3>
@@ -340,7 +1102,7 @@
           </div>
           <span class="gpa-badge">GPA 5.00</span>
         </div>
-        <div class="edu-row">
+        <div class="edu-row reveal">
           <div class="edu-year">2018</div>
           <div class="edu-name">
             <h3>Secondary School Certificate (SSC)</h3>
@@ -352,10 +1114,13 @@
     </div>
   </section>
 
-  <!-- RESEARCH -->
+  <!-- ==================== RESEARCH ==================== -->
   <section id="research">
     <div class="wrap">
-      <div class="entry-label"><span class="num">Entry No. 02</span> Research</div>
+      <div class="section-label reveal">
+        <span class="num">02</span>
+        <span class="label-text">Research</span>
+      </div>
 
       <div class="thesis-card reveal">
         <span class="thesis-status">Thesis Proposal · Research in Progress</span>
@@ -393,13 +1158,16 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- ==================== PROJECTS ==================== -->
   <section id="projects">
     <div class="wrap">
-      <div class="entry-label"><span class="num">Entry No. 03</span> Projects</div>
-      <div class="proj-grid">
+      <div class="section-label reveal">
+        <span class="num">03</span>
+        <span class="label-text">Projects</span>
+      </div>
+      <div class="proj-grid stagger-children">
 
-        <div class="proj-card full reveal">
+        <div class="proj-card full reveal" data-tilt>
           <div class="proj-top">
             <h3>CrossMamba-Agri Tracker</h3>
             <span class="proj-status live">Live</span>
@@ -409,7 +1177,7 @@
           <a class="proj-link" href="https://github.com/altafur-fuad/crossmamba-agri-tracker" target="_blank" rel="noopener">View on GitHub →</a>
         </div>
 
-        <div class="proj-card reveal">
+        <div class="proj-card reveal" data-tilt>
           <div class="proj-top">
             <h3>Taqwa Tracker</h3>
             <span class="proj-status">Mostly Complete</span>
@@ -419,7 +1187,7 @@
           <a class="proj-link" href="https://github.com/altafur-fuad/Taqwa_Tracker" target="_blank" rel="noopener">View on GitHub →</a>
         </div>
 
-        <div class="proj-card reveal">
+        <div class="proj-card reveal" data-tilt>
           <div class="proj-top">
             <h3>Asrar-E-Tibb</h3>
             <span class="proj-status">SPD-2 · In Progress</span>
@@ -429,7 +1197,7 @@
           <a class="proj-link" href="https://github.com/altafur-fuad/Asrar-E-Tibb" target="_blank" rel="noopener">View on GitHub →</a>
         </div>
 
-        <div class="proj-card reveal">
+        <div class="proj-card reveal" data-tilt>
           <div class="proj-top">
             <h3>MediLens</h3>
             <span class="proj-status">SDP-1</span>
@@ -439,7 +1207,7 @@
           <a class="proj-link" href="https://github.com/altafur-fuad/SDP1_Medilens" target="_blank" rel="noopener">View on GitHub →</a>
         </div>
 
-        <div class="proj-card reveal">
+        <div class="proj-card reveal" data-tilt>
           <div class="proj-top">
             <h3>DSA Practice</h3>
             <span class="proj-status">Ongoing</span>
@@ -453,10 +1221,13 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- ==================== SKILLS ==================== -->
   <section id="skills">
     <div class="wrap">
-      <div class="entry-label"><span class="num">Entry No. 04</span> Skills</div>
+      <div class="section-label reveal">
+        <span class="num">04</span>
+        <span class="label-text">Skills</span>
+      </div>
       <div class="skills-grid">
         <div class="skill-group reveal">
           <h3>Core — Flutter Development</h3>
@@ -483,18 +1254,28 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- Anime Quote Divider -->
+  <div class="anime-divider reveal">
+    <div class="line"></div>
+    <blockquote>"ARISE."</blockquote>
+    <p class="attr">— Sung Jinwoo, Solo Leveling (Shadow Monarch)</p>
+  </div>
+
+  <!-- ==================== CONTACT ==================== -->
   <section id="contact">
     <div class="wrap">
-      <div class="entry-label"><span class="num">Entry No. 05</span> Contact</div>
+      <div class="section-label reveal">
+        <span class="num">05</span>
+        <span class="label-text">Contact</span>
+      </div>
       <div class="contact-grid">
         <div>
           <p class="contact-note reveal">Open to opportunities, collaborations, and conversations about Flutter development, agricultural AI research, or quantum computing.</p>
           <div class="contact-list reveal">
-            <div><span>Email</span><span>altaf1fuad2@gmail.com</span></div>
-            <div><span>Academic Email</span><span>arfuad@bgctub.ac.bd</span></div>
-            <div><span>Phone</span><span>+880 1646-081161</span></div>
-            <div><span>Phone (Alt)</span><span>+880 1522-118224</span></div>
+            <div class="c-row"><span class="c-key">Email</span><span class="c-val">altaf1fuad2@gmail.com</span></div>
+            <div class="c-row"><span class="c-key">Academic Email</span><span class="c-val">arfuad@bgctub.ac.bd</span></div>
+            <div class="c-row"><span class="c-key">Phone</span><span class="c-val">+880 1646-081161</span></div>
+            <div class="c-row"><span class="c-key">Phone (Alt)</span><span class="c-val">+880 1522-118224</span></div>
           </div>
         </div>
         <div class="reveal">
@@ -513,20 +1294,105 @@
 </main>
 
 <footer>
-  <div class="wrap">© 2026 Altafur Rahman Fuad · Built with Flutter-developer discipline &amp; a field ledger's eye for detail.</div>
+  <div class="wrap">© 2026 Altafur Rahman Fuad · Driven by Water Hashira discipline & Shadow Monarch vision.</div>
 </footer>
 
-<script>
-  const toggle = document.getElementById('navToggle');
-  const links = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => links.classList.toggle('open'));
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</div><!-- end content-wrap -->
 
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el => io.observe(el));
+<script>
+/* ============================================================
+   INTERACTIONS
+   ============================================================ */
+
+// Nav toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+let menuOpen = false;
+navToggle.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  navLinks.classList.toggle('open');
+  navToggle.textContent = menuOpen ? '✕' : '☰';
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuOpen = false;
+    navToggle.textContent = '☰';
+  });
+});
+
+// Scroll spy
+const sects = document.querySelectorAll('section[id]');
+const navAs = document.querySelectorAll('.nav-links a');
+function updateNav() {
+  const sy = window.scrollY + 200;
+  sects.forEach(s => {
+    const t = s.offsetTop, h = s.offsetHeight, id = s.getAttribute('id');
+    if (sy >= t && sy < t + h) {
+      navAs.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === '#' + id) a.classList.add('active');
+      });
+    }
+  });
+}
+window.addEventListener('scroll', updateNav, { passive: true });
+
+// Typing effect
+const typedEl = document.getElementById('typedText');
+const fullText = "Flutter developer & CS undergrad — building AI-powered agriculture research and full-stack mobile apps.";
+let ci = 0;
+function typeChar() {
+  if (ci < fullText.length) {
+    typedEl.textContent += fullText.charAt(ci);
+    ci++;
+    setTimeout(typeChar, 30 + Math.random() * 35);
+  }
+}
+const heroObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { setTimeout(typeChar, 600); heroObs.disconnect(); }
+  });
+}, { threshold: 0.3 });
+heroObs.observe(document.querySelector('.hero'));
+
+// Scroll reveal
+const revEls = document.querySelectorAll('.reveal');
+const revObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+revEls.forEach(el => revObs.observe(el));
+
+// 3D tilt on project cards
+document.querySelectorAll('[data-tilt]').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const r = card.getBoundingClientRect();
+    const x = e.clientX - r.left, y = e.clientY - r.top;
+    const rx = ((y - r.height / 2) / (r.height / 2)) * -3;
+    const ry = ((x - r.width / 2) / (r.width / 2)) * 3;
+    card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-3px)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+  });
+});
+
+// Portrait tilt
+const pt = document.getElementById('portraitTilt');
+if (pt) {
+  const pc = pt.closest('.portrait-card');
+  pc.addEventListener('mousemove', (e) => {
+    const r = pc.getBoundingClientRect();
+    const rx = ((e.clientY - r.top - r.height / 2) / (r.height / 2)) * -5;
+    const ry = ((e.clientX - r.left - r.width / 2) / (r.width / 2)) * 5;
+    pt.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+  });
+  pc.addEventListener('mouseleave', () => {
+    pt.style.transform = 'rotateX(0) rotateY(0)';
+  });
+}
 </script>
 
 </body>
