@@ -10,42 +10,76 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dela+Gothic+One&family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   WATER HASHIRA X SOLO LEVELING MONARCH ANIME THEME
-   Electric Water Cyan + Shadow Monarch Purple + Dark Abyss
+   DEMON SLAYER x ATTACK ON TITAN — DUAL ANIME THEME
+   Tanjiro Hinokami Kagura (Warm) ↔ Levi Survey Corps (Cool)
+   Flip the card to switch the entire website theme!
    ============================================================ */
+
+/* ========== THEME VARIABLES ========== */
 :root {
-  /* Dark Shadow Abyss Backgrounds */
-  --bg-dark:       #080b14;
-  --bg-deep:       #0e1322;
-  --bg-panel:      rgba(14, 19, 36, 0.88);
-  --bg-card:       rgba(18, 25, 46, 0.78);
-  --bg-card-hover: rgba(26, 36, 66, 0.95);
+  /* Demon Slayer — Tanjiro Hinokami Kagura Theme (Default) */
+  --bg-dark:       #0c0806;
+  --bg-deep:       #1a0e08;
+  --bg-panel:      rgba(26, 14, 8, 0.92);
+  --bg-card:       rgba(36, 18, 8, 0.78);
+  --bg-card-hover: rgba(56, 28, 12, 0.95);
 
-  /* High Contrast Readable Text */
-  --text-white:    #ffffff;
-  --text-bright:   #e2e8f0;
-  --text-dim:      #94a3b8;
-  --text-muted:    #64748b;
+  --text-white:    #fff5eb;
+  --text-bright:   #f0d8c0;
+  --text-dim:      #b8937a;
+  --text-muted:    #7a6050;
 
-  /* Water Hashira (Demon Slayer) & Shadow Monarch (Solo Leveling) Accents */
-  --water-cyan:    #00f0ff;
-  --water-blue:    #0088ff;
-  --monarch-purple:#9d4edf;
-  --monarch-violet:#7c3aed;
-  --monarch-glow:  #a855f7;
+  --accent-primary:   #ff6a00;
+  --accent-secondary: #ff2d2d;
+  --accent-glow:      #ffa040;
+  --accent-alt:       #ffd700;
 
-  /* Borders & Glow Shadows */
-  --border:        rgba(0, 240, 255, 0.15);
-  --border-cyan:   rgba(0, 240, 255, 0.4);
-  --border-purple: rgba(157, 78, 223, 0.4);
-  --border-hover:  rgba(0, 240, 255, 0.65);
-  --glow-cyan:     rgba(0, 240, 255, 0.3);
-  --glow-purple:   rgba(157, 78, 223, 0.3);
+  --border:        rgba(255, 106, 0, 0.15);
+  --border-accent: rgba(255, 106, 0, 0.4);
+  --border-alt:    rgba(255, 45, 45, 0.4);
+  --border-hover:  rgba(255, 106, 0, 0.65);
+  --glow-primary:  rgba(255, 106, 0, 0.3);
+  --glow-alt:      rgba(255, 45, 45, 0.3);
+
+  --grad-start: var(--accent-primary);
+  --grad-end:   var(--accent-secondary);
 
   /* Layout */
   --max-w: 1140px;
   --radius: 8px;
   --radius-sm: 4px;
+
+  /* Theme transition */
+  --theme-speed: 0.8s;
+}
+
+/* ========== AOT — LEVI SURVEY CORPS THEME (activated via .theme-levi on body) ========== */
+body.theme-levi {
+  --bg-dark:       #060d08;
+  --bg-deep:       #0a1a0e;
+  --bg-panel:      rgba(10, 26, 14, 0.92);
+  --bg-card:       rgba(14, 36, 18, 0.78);
+  --bg-card-hover: rgba(20, 56, 28, 0.95);
+
+  --text-white:    #ebfff0;
+  --text-bright:   #c0f0d0;
+  --text-dim:      #7ab890;
+  --text-muted:    #507a60;
+
+  --accent-primary:   #00cc66;
+  --accent-secondary: #00ff88;
+  --accent-glow:      #40ffa0;
+  --accent-alt:       #88ddaa;
+
+  --border:        rgba(0, 204, 102, 0.15);
+  --border-accent: rgba(0, 204, 102, 0.4);
+  --border-alt:    rgba(0, 255, 136, 0.4);
+  --border-hover:  rgba(0, 204, 102, 0.65);
+  --glow-primary:  rgba(0, 204, 102, 0.3);
+  --glow-alt:      rgba(0, 255, 136, 0.3);
+
+  --grad-start: var(--accent-primary);
+  --grad-end:   var(--accent-secondary);
 }
 
 /* ========== RESET & BASE ========== */
@@ -63,6 +97,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   position: relative;
+  transition: background var(--theme-speed) ease, color var(--theme-speed) ease;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -71,34 +106,36 @@ img { max-width: 100%; display: block; }
 .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; }
 @media (max-width: 640px) { .wrap { padding: 0 20px; } }
 
-/* Water Breathing + Shadow Monarch Ambient Background */
+/* Ambient Background */
 body::before {
   content: "";
   position: fixed; inset: 0;
   pointer-events: none;
   z-index: 0;
   background: 
-    radial-gradient(circle at 15% 20%, rgba(0, 240, 255, 0.12) 0%, transparent 45%),
-    radial-gradient(circle at 85% 65%, rgba(157, 78, 223, 0.12) 0%, transparent 45%),
-    radial-gradient(circle at 50% 95%, rgba(0, 136, 255, 0.08) 0%, transparent 40%);
+    radial-gradient(circle at 15% 20%, var(--glow-primary) 0%, transparent 45%),
+    radial-gradient(circle at 85% 65%, var(--glow-alt) 0%, transparent 45%),
+    radial-gradient(circle at 50% 95%, var(--glow-primary) 0%, transparent 40%);
+  transition: background var(--theme-speed) ease;
 }
 
-/* Water Wave & Shadow Aura Overlay Grid */
+/* Grid Overlay */
 body::after {
   content: "";
   position: fixed; inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(157, 78, 223, 0.03) 1px, transparent 1px);
+  background-image: linear-gradient(var(--border) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--border) 1px, transparent 1px);
   background-size: 44px 44px;
+  transition: background-image var(--theme-speed) ease;
 }
 
 /* ========== SCROLLBAR ========== */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-dark); }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--water-cyan), var(--monarch-purple));
+  background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary));
   border-radius: 3px;
 }
 
@@ -108,15 +145,42 @@ body::after {
   z-index: 2;
 }
 
+/* ========== THEME TRANSITION FLASH ========== */
+.theme-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+}
+.theme-flash.active {
+  animation: flashBang 0.6s ease-out forwards;
+}
+@keyframes flashBang {
+  0% { opacity: 0; }
+  15% { opacity: 0.7; }
+  100% { opacity: 0; }
+}
+body:not(.theme-levi) .theme-flash {
+  background: radial-gradient(circle, rgba(255,106,0,0.5), rgba(255,45,45,0.3), transparent 70%);
+}
+body.theme-levi .theme-flash {
+  background: radial-gradient(circle, rgba(0,204,102,0.5), rgba(0,255,136,0.3), transparent 70%);
+}
+
 /* ========== NAV ========== */
 header {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(8, 11, 20, 0.88);
+  background: rgba(12, 8, 6, 0.92);
   backdrop-filter: blur(20px) saturate(1.3);
   -webkit-backdrop-filter: blur(20px) saturate(1.3);
   border-bottom: 1px solid var(--border);
+  transition: background var(--theme-speed) ease, border-color var(--theme-speed) ease;
+}
+body.theme-levi header {
+  background: rgba(6, 13, 8, 0.92);
 }
 
 nav.wrap {
@@ -135,6 +199,7 @@ nav.wrap {
   color: var(--text-white);
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  transition: color var(--theme-speed) ease;
 }
 
 .brand-icon {
@@ -144,9 +209,10 @@ nav.wrap {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--bg-dark);
-  background: linear-gradient(135deg, var(--water-cyan), var(--monarch-purple));
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   border-radius: var(--radius-sm);
-  box-shadow: 0 0 14px var(--glow-cyan);
+  box-shadow: 0 0 14px var(--glow-primary);
+  transition: all var(--theme-speed) ease;
 }
 
 .nav-links {
@@ -171,42 +237,48 @@ nav.wrap {
   position: absolute;
   bottom: 4px; left: 50%; transform: translateX(-50%);
   width: 0; height: 2px;
-  background: var(--water-cyan);
-  box-shadow: 0 0 8px var(--water-cyan);
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px var(--accent-primary);
   transition: width 0.3s;
 }
 
 .nav-links a:hover {
   color: var(--text-white);
-  background: rgba(0, 240, 255, 0.1);
+  background: rgba(255, 106, 0, 0.1);
+}
+body.theme-levi .nav-links a:hover {
+  background: rgba(0, 204, 102, 0.1);
 }
 .nav-links a:hover::after,
 .nav-links a.active::after { width: 60%; }
-.nav-links a.active { color: var(--water-cyan); }
+.nav-links a.active { color: var(--accent-primary); }
 
 .nav-toggle {
   display: none;
   background: none;
   border: 1px solid var(--border);
-  color: var(--water-cyan);
+  color: var(--accent-primary);
   width: 42px; height: 42px;
   border-radius: var(--radius-sm);
   cursor: pointer;
   font-size: 1.4rem;
   transition: all 0.3s;
 }
-.nav-toggle:hover { border-color: var(--water-cyan); }
+.nav-toggle:hover { border-color: var(--accent-primary); }
 
 @media (max-width: 760px) {
   .nav-links {
     position: absolute;
     top: 68px; left: 0; right: 0;
-    background: rgba(8, 11, 20, 0.98);
+    background: rgba(12, 8, 6, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column; gap: 0;
     border-bottom: 1px solid var(--border);
     max-height: 0; overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  body.theme-levi .nav-links {
+    background: rgba(6, 13, 8, 0.98);
   }
   .nav-links.open { max-height: 500px; }
   .nav-links a {
@@ -236,8 +308,9 @@ section {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.6rem;
   letter-spacing: 0.1em;
-  color: var(--monarch-purple);
-  text-shadow: 0 0 10px var(--glow-purple);
+  color: var(--accent-secondary);
+  text-shadow: 0 0 10px var(--glow-alt);
+  transition: color var(--theme-speed) ease, text-shadow var(--theme-speed) ease;
 }
 .section-label .label-text {
   font-family: 'Dela Gothic One', sans-serif;
@@ -245,12 +318,14 @@ section {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--text-white);
+  transition: color var(--theme-speed) ease;
 }
 .section-label::after {
   content: "";
   flex: 1; height: 2px;
-  background: linear-gradient(to right, var(--water-cyan), var(--monarch-purple), transparent);
+  background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary), transparent);
   opacity: 0.4;
+  transition: background var(--theme-speed) ease;
 }
 
 /* ========== HERO ========== */
@@ -263,19 +338,24 @@ section {
   overflow: hidden;
 }
 
-/* Kanji Background Watermark — 水柱 · 影の君主 (Water Hashira · Shadow Monarch) */
+/* Kanji Background Watermark */
 .hero::before {
-  content: "水柱影君";
+  content: "炎柱鬼滅";
   position: absolute;
   right: -20px; top: 50%;
   transform: translateY(-50%);
   font-family: 'Dela Gothic One', sans-serif;
   font-size: clamp(8rem, 20vw, 16rem);
-  color: rgba(0, 240, 255, 0.03);
+  color: rgba(255, 106, 0, 0.03);
   writing-mode: vertical-rl;
   pointer-events: none;
   user-select: none;
   line-height: 1;
+  transition: color var(--theme-speed) ease;
+}
+body.theme-levi .hero::before {
+  content: "自由翼兵";
+  color: rgba(0, 204, 102, 0.03);
 }
 
 .hero-grid {
@@ -303,18 +383,25 @@ section {
   text-transform: uppercase;
   padding: 6px 16px;
   border-radius: var(--radius-sm);
+  transition: all var(--theme-speed) ease;
 }
-.badge.cyan {
-  border: 1px solid var(--water-cyan);
-  color: var(--water-cyan);
-  background: rgba(0, 240, 255, 0.1);
-  box-shadow: 0 0 12px var(--glow-cyan);
+.badge.primary {
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
+  background: rgba(255, 106, 0, 0.1);
+  box-shadow: 0 0 12px var(--glow-primary);
 }
-.badge.purple {
-  border: 1px solid var(--monarch-purple);
-  color: var(--monarch-purple);
-  background: rgba(157, 78, 223, 0.1);
-  box-shadow: 0 0 12px var(--glow-purple);
+body.theme-levi .badge.primary {
+  background: rgba(0, 204, 102, 0.1);
+}
+.badge.secondary {
+  border: 1px solid var(--accent-secondary);
+  color: var(--accent-secondary);
+  background: rgba(255, 45, 45, 0.1);
+  box-shadow: 0 0 12px var(--glow-alt);
+}
+body.theme-levi .badge.secondary {
+  background: rgba(0, 255, 136, 0.1);
 }
 
 .hero-name {
@@ -323,14 +410,16 @@ section {
   line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--text-white);
-  text-shadow: 0 0 30px rgba(0, 240, 255, 0.25);
+  text-shadow: 0 0 30px var(--glow-primary);
+  transition: text-shadow var(--theme-speed) ease, color var(--theme-speed) ease;
 }
 
 .hero-name .accent {
-  background: linear-gradient(135deg, var(--water-cyan), var(--water-blue), var(--monarch-purple));
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-glow), var(--accent-secondary));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition: background var(--theme-speed) ease;
 }
 
 .tagline {
@@ -340,16 +429,18 @@ section {
   max-width: 52ch;
   line-height: 1.75;
   font-weight: 500;
+  transition: color var(--theme-speed) ease;
 }
-.tagline .typed-text { color: var(--water-cyan); }
+.tagline .typed-text { color: var(--accent-primary); transition: color var(--theme-speed) ease; }
 .tagline .cursor-blink {
   display: inline-block;
   width: 3px; height: 1.15em;
-  background: var(--water-cyan);
-  box-shadow: 0 0 8px var(--water-cyan);
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px var(--accent-primary);
   margin-left: 3px;
   vertical-align: text-bottom;
   animation: blink 1s step-end infinite;
+  transition: background var(--theme-speed) ease, box-shadow var(--theme-speed) ease;
 }
 
 .hero-meta {
@@ -360,14 +451,18 @@ section {
   font-family: 'Fira Code', monospace;
   font-size: 0.85rem;
   color: var(--text-dim);
+  transition: color var(--theme-speed) ease;
 }
 .hero-meta span b {
   color: var(--text-white);
   font-weight: 600;
 }
 .hero-meta span::before {
-  content: "🌊 ";
-  color: var(--water-cyan);
+  content: "🔥 ";
+  color: var(--accent-primary);
+}
+body.theme-levi .hero-meta span::before {
+  content: "⚔️ ";
 }
 
 .hero-cta {
@@ -393,52 +488,97 @@ section {
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, var(--water-cyan), var(--water-blue));
-  border-color: var(--water-cyan);
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  border-color: var(--accent-primary);
   color: var(--bg-dark);
-  box-shadow: 0 0 20px var(--glow-cyan);
+  box-shadow: 0 0 20px var(--glow-primary);
   font-weight: 700;
 }
 .btn.primary:hover {
-  box-shadow: 0 0 30px var(--glow-cyan), 0 6px 24px rgba(157, 78, 223, 0.4);
+  box-shadow: 0 0 30px var(--glow-primary), 0 6px 24px var(--glow-alt);
   transform: translateY(-3px);
   color: #ffffff;
-  background: linear-gradient(135deg, var(--water-blue), var(--monarch-purple));
 }
 
 .btn.ghost {
-  background: rgba(14, 19, 36, 0.6);
+  background: rgba(14, 8, 6, 0.6);
   border-color: var(--border);
   color: var(--text-white);
 }
+body.theme-levi .btn.ghost {
+  background: rgba(6, 14, 8, 0.6);
+}
 .btn.ghost:hover {
-  border-color: var(--monarch-purple);
-  color: var(--monarch-purple);
-  box-shadow: 0 0 20px var(--glow-purple);
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+  box-shadow: 0 0 20px var(--glow-alt);
   transform: translateY(-3px);
 }
 
-/* ========== PORTRAIT ========== */
+/* ========== FLIP CARD PORTRAIT ========== */
 .portrait-card {
   position: relative;
-  perspective: 800px;
+  perspective: 1200px;
+  cursor: pointer;
 }
 
-.portrait-inner {
-  background: var(--bg-panel);
-  border: 2px solid var(--border-cyan);
+.flip-hint {
+  position: absolute;
+  bottom: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  opacity: 0.7;
+  animation: hintPulse 2s ease-in-out infinite;
+  white-space: nowrap;
+  transition: color var(--theme-speed) ease;
+}
+@keyframes hintPulse {
+  0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 1; transform: translateX(-50%) translateY(3px); }
+}
+
+.portrait-flipper {
+  position: relative;
+  width: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.portrait-card.flipped .portrait-flipper {
+  transform: rotateY(180deg);
+}
+
+.portrait-front,
+.portrait-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: var(--radius);
   padding: 12px;
   position: relative;
-  box-shadow: 0 0 35px var(--glow-cyan), 0 0 50px var(--glow-purple);
-  transition: transform 0.5s cubic-bezier(0.03, 0.98, 0.52, 0.99), box-shadow 0.5s;
-}
-.portrait-inner:hover {
-  border-color: var(--monarch-purple);
-  box-shadow: 0 0 55px var(--glow-purple), 0 0 80px var(--glow-cyan);
+  transition: border-color var(--theme-speed) ease, box-shadow var(--theme-speed) ease;
 }
 
-.portrait-inner img {
+.portrait-front {
+  background: rgba(26, 14, 8, 0.92);
+  border: 2px solid var(--accent-primary);
+  box-shadow: 0 0 35px var(--glow-primary), 0 0 50px var(--glow-alt);
+}
+
+.portrait-back {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background: rgba(10, 26, 14, 0.92);
+  border: 2px solid #00cc66;
+  box-shadow: 0 0 35px rgba(0, 204, 102, 0.3), 0 0 50px rgba(0, 255, 136, 0.3);
+  transform: rotateY(180deg);
+}
+
+.portrait-front img,
+.portrait-back img {
   border-radius: var(--radius-sm);
   width: 100%;
   aspect-ratio: 3 / 4;
@@ -448,25 +588,40 @@ section {
 }
 
 /* Anime Frame Corners */
-.portrait-inner::before,
-.portrait-inner::after {
+.portrait-front::before,
+.portrait-front::after,
+.portrait-back::before,
+.portrait-back::after {
   content: "";
   position: absolute;
   width: 36px; height: 36px;
-  border: 3px solid var(--water-cyan);
   transition: all 0.4s;
 }
-.portrait-inner::before {
+.portrait-front::before {
   top: -2px; left: -2px;
+  border: 3px solid var(--accent-primary);
   border-right: none; border-bottom: none;
 }
-.portrait-inner::after {
+.portrait-front::after {
   bottom: -2px; right: -2px;
+  border: 3px solid var(--accent-secondary);
   border-left: none; border-top: none;
 }
-.portrait-inner:hover::before,
-.portrait-inner:hover::after {
-  border-color: var(--monarch-purple);
+.portrait-back::before {
+  top: -2px; left: -2px;
+  border: 3px solid #00cc66;
+  border-right: none; border-bottom: none;
+}
+.portrait-back::after {
+  bottom: -2px; right: -2px;
+  border: 3px solid #00ff88;
+  border-left: none; border-top: none;
+}
+
+.portrait-card:hover .portrait-front::before,
+.portrait-card:hover .portrait-front::after,
+.portrait-card:hover .portrait-back::before,
+.portrait-card:hover .portrait-back::after {
   width: 46px; height: 46px;
 }
 
@@ -474,15 +629,57 @@ section {
   position: absolute;
   bottom: 0; left: 24px;
   background: var(--bg-dark);
-  border: 1px solid var(--water-cyan);
+  border: 1px solid var(--accent-primary);
   padding: 8px 18px;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 0.95rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--water-cyan);
+  color: var(--accent-primary);
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-  box-shadow: 0 0 14px var(--glow-cyan);
+  box-shadow: 0 0 14px var(--glow-primary);
+  transition: all var(--theme-speed) ease;
+}
+.portrait-back .portrait-tag {
+  color: #00cc66;
+  border-color: #00cc66;
+  box-shadow: 0 0 14px rgba(0, 204, 102, 0.3);
+}
+
+/* ========== THEME INDICATOR ========== */
+.theme-indicator {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-accent);
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  box-shadow: 0 4px 20px var(--glow-primary);
+  backdrop-filter: blur(12px);
+  transition: all var(--theme-speed) ease;
+  cursor: pointer;
+  user-select: none;
+}
+.theme-indicator:hover {
+  box-shadow: 0 4px 30px var(--glow-primary), 0 0 20px var(--glow-alt);
+  transform: translateY(-2px);
+}
+.theme-indicator .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px var(--accent-primary);
+  animation: pulse 2s ease-in-out infinite;
 }
 
 /* ========== ABOUT ========== */
@@ -497,6 +694,7 @@ section {
   color: var(--text-bright);
   font-size: 1.1rem;
   line-height: 1.85;
+  transition: color var(--theme-speed) ease;
 }
 
 .fact-list { display: flex; flex-direction: column; }
@@ -509,12 +707,13 @@ section {
   border-bottom: 1px solid var(--border);
   font-family: 'Fira Code', monospace;
   font-size: 0.88rem;
-  transition: background 0.3s;
+  transition: all 0.3s;
 }
 .fact-row:first-child { border-top: 1px solid var(--border); }
-.fact-row:hover { background: rgba(0, 240, 255, 0.04); }
-.fact-key { color: var(--text-dim); }
-.fact-val { color: var(--text-white); font-weight: 600; text-align: right; }
+.fact-row:hover { background: rgba(255, 106, 0, 0.04); }
+body.theme-levi .fact-row:hover { background: rgba(0, 204, 102, 0.04); }
+.fact-key { color: var(--text-dim); transition: color var(--theme-speed) ease; }
+.fact-val { color: var(--text-white); font-weight: 600; text-align: right; transition: color var(--theme-speed) ease; }
 
 /* ========== EDUCATION ========== */
 .edu-list { display: flex; flex-direction: column; gap: 12px; }
@@ -531,9 +730,9 @@ section {
   transition: all 0.35s;
 }
 .edu-row:hover {
-  border-color: var(--border-cyan);
+  border-color: var(--border-accent);
   background: var(--bg-card-hover);
-  box-shadow: 0 8px 30px var(--glow-cyan);
+  box-shadow: 0 8px 30px var(--glow-primary);
 }
 @media (max-width: 700px) {
   .edu-row { grid-template-columns: 1fr; gap: 8px; padding: 20px; }
@@ -543,43 +742,51 @@ section {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.15rem;
   letter-spacing: 0.05em;
-  color: var(--water-cyan);
+  color: var(--accent-primary);
+  transition: color var(--theme-speed) ease;
 }
 
 .edu-name h3 {
   font-family: 'Dela Gothic One', sans-serif;
   font-size: 1.05rem;
   color: var(--text-white);
+  transition: color var(--theme-speed) ease;
 }
 .edu-name p {
   margin-top: 4px;
   color: var(--text-dim);
   font-size: 0.95rem;
+  transition: color var(--theme-speed) ease;
 }
 
 .gpa-badge {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 0.95rem;
   letter-spacing: 0.05em;
-  color: var(--monarch-purple);
-  border: 1px solid var(--monarch-purple);
+  color: var(--accent-secondary);
+  border: 1px solid var(--accent-secondary);
   padding: 6px 16px;
   border-radius: var(--radius-sm);
   white-space: nowrap;
-  background: rgba(157, 78, 223, 0.1);
-  box-shadow: 0 0 10px rgba(157, 78, 223, 0.2);
+  background: rgba(255, 45, 45, 0.1);
+  box-shadow: 0 0 10px var(--glow-alt);
+  transition: all var(--theme-speed) ease;
+}
+body.theme-levi .gpa-badge {
+  background: rgba(0, 255, 136, 0.1);
 }
 
 /* ========== RESEARCH ========== */
 .thesis-card {
   background: var(--bg-panel);
   backdrop-filter: blur(16px);
-  border: 1px solid var(--border-cyan);
+  border: 1px solid var(--border-accent);
   border-radius: var(--radius);
   padding: 40px;
   position: relative;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  transition: all var(--theme-speed) ease;
 }
 
 .thesis-card::before {
@@ -587,8 +794,9 @@ section {
   position: absolute;
   top: 0; left: 0;
   width: 4px; height: 100%;
-  background: linear-gradient(to bottom, var(--water-cyan), var(--water-blue), var(--monarch-purple));
-  box-shadow: 0 0 15px var(--glow-cyan);
+  background: linear-gradient(to bottom, var(--accent-primary), var(--accent-glow), var(--accent-secondary));
+  box-shadow: 0 0 15px var(--glow-primary);
+  transition: all var(--theme-speed) ease;
 }
 
 .thesis-status {
@@ -598,19 +806,23 @@ section {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 0.95rem;
   letter-spacing: 0.08em;
-  color: var(--water-cyan);
-  border: 1px solid var(--water-cyan);
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
   padding: 6px 16px;
   border-radius: var(--radius-sm);
   margin-bottom: 20px;
-  background: rgba(0, 240, 255, 0.1);
+  background: rgba(255, 106, 0, 0.1);
+  transition: all var(--theme-speed) ease;
+}
+body.theme-levi .thesis-status {
+  background: rgba(0, 204, 102, 0.1);
 }
 .thesis-status::before {
   content: "";
   width: 6px; height: 6px;
   border-radius: 50%;
-  background: var(--water-cyan);
-  box-shadow: 0 0 8px var(--water-cyan);
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px var(--accent-primary);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -620,13 +832,15 @@ section {
   margin-bottom: 8px;
   color: var(--text-white);
   letter-spacing: 0.02em;
+  transition: color var(--theme-speed) ease;
 }
 
 .thesis-sub {
-  color: var(--water-cyan);
+  color: var(--accent-primary);
   font-size: 1rem;
   margin-bottom: 18px;
   font-weight: 600;
+  transition: color var(--theme-speed) ease;
 }
 
 .thesis-card p.desc {
@@ -634,6 +848,7 @@ section {
   max-width: 72ch;
   margin-bottom: 24px;
   line-height: 1.85;
+  transition: color var(--theme-speed) ease;
 }
 
 .branch-tags { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
@@ -647,14 +862,20 @@ section {
   transition: all 0.3s;
 }
 .btag.dis {
-  color: var(--water-cyan);
-  border-color: var(--water-cyan);
-  background: rgba(0, 240, 255, 0.1);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  background: rgba(255, 106, 0, 0.1);
+}
+body.theme-levi .btag.dis {
+  background: rgba(0, 204, 102, 0.1);
 }
 .btag.pest {
-  color: var(--monarch-purple);
-  border-color: var(--monarch-purple);
-  background: rgba(157, 78, 223, 0.1);
+  color: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+  background: rgba(255, 45, 45, 0.1);
+}
+body.theme-levi .btag.pest {
+  background: rgba(0, 255, 136, 0.1);
 }
 
 .thesis-links { display: flex; gap: 20px; flex-wrap: wrap; }
@@ -662,7 +883,7 @@ section {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.1rem;
   letter-spacing: 0.06em;
-  color: var(--water-cyan);
+  color: var(--accent-primary);
   position: relative;
   transition: all 0.3s;
 }
@@ -671,8 +892,8 @@ section {
   position: absolute;
   bottom: -2px; left: 0;
   width: 100%; height: 2px;
-  background: var(--water-cyan);
-  box-shadow: 0 0 8px var(--water-cyan);
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px var(--accent-primary);
   opacity: 0.4;
   transition: opacity 0.3s;
 }
@@ -694,23 +915,25 @@ section {
   transition: all 0.35s;
 }
 .research-sub:hover {
-  border-color: var(--border-cyan);
+  border-color: var(--border-accent);
   background: var(--bg-card-hover);
-  box-shadow: 0 8px 30px var(--glow-cyan);
+  box-shadow: 0 8px 30px var(--glow-primary);
 }
 .research-sub .tag {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 0.95rem;
   letter-spacing: 0.08em;
-  color: var(--monarch-purple);
+  color: var(--accent-secondary);
+  transition: color var(--theme-speed) ease;
 }
 .research-sub h4 {
   font-family: 'Dela Gothic One', sans-serif;
   font-size: 1.1rem;
   margin: 10px 0 8px;
   color: var(--text-white);
+  transition: color var(--theme-speed) ease;
 }
-.research-sub p { color: var(--text-dim); font-size: 0.95rem; }
+.research-sub p { color: var(--text-dim); font-size: 0.95rem; transition: color var(--theme-speed) ease; }
 
 /* ========== PROJECTS ========== */
 .proj-grid {
@@ -735,15 +958,15 @@ section {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(to right, var(--water-cyan), var(--monarch-purple));
+  background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
   opacity: 0;
-  transition: opacity 0.4s;
+  transition: opacity 0.4s, background var(--theme-speed) ease;
 }
 .proj-card:hover::before { opacity: 1; }
 .proj-card:hover {
-  border-color: var(--border-cyan);
+  border-color: var(--border-accent);
   transform: translateY(-4px);
-  box-shadow: 0 12px 35px var(--glow-cyan);
+  box-shadow: 0 12px 35px var(--glow-primary);
   background: var(--bg-card-hover);
 }
 
@@ -753,6 +976,7 @@ section {
   font-family: 'Dela Gothic One', sans-serif;
   font-size: 1.15rem;
   color: var(--text-white);
+  transition: color var(--theme-speed) ease;
 }
 
 .proj-status {
@@ -764,34 +988,39 @@ section {
   border: 1px solid var(--border);
   color: var(--text-dim);
   white-space: nowrap; flex-shrink: 0;
+  transition: all var(--theme-speed) ease;
 }
 .proj-status.live {
-  color: var(--water-cyan);
-  border-color: var(--water-cyan);
-  background: rgba(0, 240, 255, 0.1);
-  box-shadow: 0 0 10px var(--glow-cyan);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  background: rgba(255, 106, 0, 0.1);
+  box-shadow: 0 0 10px var(--glow-primary);
+}
+body.theme-levi .proj-status.live {
+  background: rgba(0, 204, 102, 0.1);
 }
 .proj-status.live::before {
   content: "";
   display: inline-block;
   width: 6px; height: 6px;
   border-radius: 50%;
-  background: var(--water-cyan);
+  background: var(--accent-primary);
   margin-right: 6px;
   animation: pulse 2s ease-in-out infinite;
 }
 
-.proj-card p { color: var(--text-bright); font-size: 0.95rem; flex: 1; }
+.proj-card p { color: var(--text-bright); font-size: 0.95rem; flex: 1; transition: color var(--theme-speed) ease; }
 .proj-stack {
   font-family: 'Fira Code', monospace;
   font-size: 0.78rem;
-  color: var(--monarch-purple);
+  color: var(--accent-secondary);
+  transition: color var(--theme-speed) ease;
 }
 .proj-link {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.05rem;
   letter-spacing: 0.06em;
-  color: var(--water-cyan);
+  color: var(--accent-primary);
   width: fit-content;
   transition: all 0.3s;
   position: relative;
@@ -801,7 +1030,7 @@ section {
   position: absolute;
   bottom: -2px; left: 0;
   width: 100%; height: 2px;
-  background: var(--water-cyan);
+  background: var(--accent-primary);
   opacity: 0.3;
   transition: opacity 0.3s;
 }
@@ -822,8 +1051,9 @@ section {
   font-family: 'Dela Gothic One', sans-serif;
   font-size: 0.95rem;
   text-transform: uppercase;
-  color: var(--water-cyan);
+  color: var(--accent-primary);
   margin-bottom: 18px;
+  transition: color var(--theme-speed) ease;
 }
 
 .pill-row { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -839,9 +1069,9 @@ section {
   transition: all 0.3s;
 }
 .pill:hover {
-  border-color: var(--water-cyan);
-  color: var(--water-cyan);
-  box-shadow: 0 0 14px var(--glow-cyan);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: 0 0 14px var(--glow-primary);
   transform: translateY(-2px);
 }
 
@@ -850,10 +1080,10 @@ section {
   border-style: dashed;
 }
 .pill.learning:hover {
-  border-color: var(--monarch-purple);
-  color: var(--monarch-purple);
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
   border-style: solid;
-  box-shadow: 0 0 14px var(--glow-purple);
+  box-shadow: 0 0 14px var(--glow-alt);
 }
 
 /* ========== CONTACT ========== */
@@ -870,6 +1100,7 @@ section {
   max-width: 48ch;
   margin-bottom: 28px;
   line-height: 1.8;
+  transition: color var(--theme-speed) ease;
 }
 
 .contact-list .c-row {
@@ -880,12 +1111,13 @@ section {
   font-family: 'Fira Code', monospace;
   font-size: 0.88rem;
   gap: 16px; flex-wrap: wrap;
-  transition: background 0.3s;
+  transition: all 0.3s;
 }
 .contact-list .c-row:first-child { border-top: 1px solid var(--border); }
-.contact-list .c-row:hover { background: rgba(0, 240, 255, 0.04); }
-.c-key { color: var(--text-dim); }
-.c-val { color: var(--text-white); font-weight: 600; }
+.contact-list .c-row:hover { background: rgba(255, 106, 0, 0.04); }
+body.theme-levi .contact-list .c-row:hover { background: rgba(0, 204, 102, 0.04); }
+.c-key { color: var(--text-dim); transition: color var(--theme-speed) ease; }
+.c-val { color: var(--text-white); font-weight: 600; transition: color var(--theme-speed) ease; }
 
 .social-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .social-row a {
@@ -901,9 +1133,9 @@ section {
   transition: all 0.3s;
 }
 .social-row a:hover {
-  border-color: var(--water-cyan);
-  color: var(--water-cyan);
-  box-shadow: 0 0 18px var(--glow-cyan);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: 0 0 18px var(--glow-primary);
   transform: translateY(-2px);
 }
 
@@ -915,14 +1147,22 @@ footer {
   font-family: 'Fira Code', monospace;
   font-size: 0.78rem;
   color: var(--text-muted);
+  transition: color var(--theme-speed) ease;
 }
 footer::before {
   content: "";
   display: block;
   width: 200px; height: 2px;
   margin: 0 auto 24px;
-  background: linear-gradient(to right, transparent, var(--water-cyan), var(--monarch-purple), transparent);
+  background: linear-gradient(to right, transparent, var(--accent-primary), var(--accent-secondary), transparent);
+  transition: background var(--theme-speed) ease;
 }
+
+/* Footer theme text swap */
+.footer-text-tanjiro { display: inline; }
+.footer-text-levi { display: none; }
+body.theme-levi .footer-text-tanjiro { display: none; }
+body.theme-levi .footer-text-levi { display: inline; }
 
 /* ========== ANIMATIONS ========== */
 @keyframes pulse {
@@ -932,6 +1172,36 @@ footer::before {
 
 @keyframes blink {
   50% { opacity: 0; }
+}
+
+/* Katana slash animation on theme switch */
+@keyframes katanaSlash {
+  0% { transform: scaleX(0); opacity: 0; }
+  30% { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(1); opacity: 0; }
+}
+.katana-slash {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 10000;
+  pointer-events: none;
+  transform-origin: left center;
+  transform: scaleX(0);
+  opacity: 0;
+}
+.katana-slash.active {
+  animation: katanaSlash 0.5s ease-out forwards;
+}
+body:not(.theme-levi) .katana-slash {
+  background: linear-gradient(to right, transparent, var(--accent-primary), var(--accent-glow), transparent);
+  box-shadow: 0 0 20px var(--accent-primary);
+}
+body.theme-levi .katana-slash {
+  background: linear-gradient(to right, transparent, #00cc66, #00ff88, transparent);
+  box-shadow: 0 0 20px #00cc66;
 }
 
 /* ========== SCROLL REVEAL ========== */
@@ -967,26 +1237,80 @@ footer::before {
 }
 .anime-divider .line {
   width: 140px; height: 2px;
-  background: linear-gradient(to right, transparent, var(--water-cyan), var(--monarch-purple), transparent);
+  background: linear-gradient(to right, transparent, var(--accent-primary), var(--accent-secondary), transparent);
   margin: 0 auto 20px;
+  transition: background var(--theme-speed) ease;
 }
 .anime-divider blockquote {
   font-family: 'Dela Gothic One', sans-serif;
   font-size: 1.15rem;
   color: var(--text-white);
   letter-spacing: 0.02em;
+  transition: color var(--theme-speed) ease;
 }
 .anime-divider .attr {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1rem;
-  color: var(--water-cyan);
+  color: var(--accent-primary);
   margin-top: 8px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  transition: color var(--theme-speed) ease;
+}
+
+/* Quote swap between themes */
+.quote-tanjiro { display: block; }
+.quote-levi { display: none; }
+body.theme-levi .quote-tanjiro { display: none; }
+body.theme-levi .quote-levi { display: block; }
+
+/* Badge text swap */
+.badge-text-tanjiro { display: inline; }
+.badge-text-levi { display: none; }
+body.theme-levi .badge-text-tanjiro { display: none; }
+body.theme-levi .badge-text-levi { display: inline; }
+
+/* ========== FLOATING PARTICLES ========== */
+.particles {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  animation: floatParticle linear infinite;
+}
+@keyframes floatParticle {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(-20vh) scale(1); opacity: 0; }
+}
+
+/* Tanjiro particles — fire embers */
+body:not(.theme-levi) .particle {
+  background: radial-gradient(circle, var(--accent-primary), var(--accent-secondary));
+  box-shadow: 0 0 6px var(--accent-primary);
+}
+/* Levi particles — green mist */
+body.theme-levi .particle {
+  background: radial-gradient(circle, #00cc66, #00ff88);
+  box-shadow: 0 0 6px #00cc66;
 }
 </style>
 </head>
 <body>
+
+<!-- Theme transition effects -->
+<div class="theme-flash" id="themeFlash"></div>
+<div class="katana-slash" id="katanaSlash"></div>
+
+<!-- Floating particles -->
+<div class="particles" id="particles"></div>
 
 <div id="content-wrap">
 
@@ -1016,8 +1340,14 @@ footer::before {
     <div class="wrap hero-grid">
       <div>
         <div class="hero-badges reveal">
-          <span class="badge cyan">Water Breathing · Entry 000</span>
-          <span class="badge purple">Shadow Monarch · 8th Sem</span>
+          <span class="badge primary">
+            <span class="badge-text-tanjiro">Hinokami Kagura · Sun Breathing</span>
+            <span class="badge-text-levi">Wings of Freedom · Survey Corps</span>
+          </span>
+          <span class="badge secondary">
+            <span class="badge-text-tanjiro">Demon Slayer · 8th Sem</span>
+            <span class="badge-text-levi">Humanity's Strongest · 8th Sem</span>
+          </span>
         </div>
         <h1 class="hero-name reveal">Altafur<br>Rahman <span class="accent">Fuad</span></h1>
         <p class="tagline reveal">
@@ -1033,11 +1363,20 @@ footer::before {
           <a href="#contact" class="btn ghost">Get in Touch</a>
         </div>
       </div>
-      <div class="portrait-card reveal">
-        <div class="portrait-inner" id="portraitTilt">
-          <img src="assets/fuad-anime-water-monarch.png" alt="Portrait of Altafur Rahman Fuad — Water Hashira x Solo Leveling Style">
-          <div class="portrait-tag">CSE · BGC Trust University</div>
+      <div class="portrait-card reveal" id="portraitCard">
+        <div class="portrait-flipper" id="portraitFlipper">
+          <!-- FRONT — Tanjiro / Demon Slayer -->
+          <div class="portrait-front">
+            <img src="assets/fuad-tanjiro.png" alt="Portrait of Altafur Rahman Fuad — Demon Slayer Tanjiro Hinokami Kagura Style">
+            <div class="portrait-tag">🔥 Hinokami Kagura</div>
+          </div>
+          <!-- BACK — Levi / Attack on Titan -->
+          <div class="portrait-back">
+            <img src="assets/fuad-levi.png" alt="Portrait of Altafur Rahman Fuad — Attack on Titan Levi Ackerman Style">
+            <div class="portrait-tag">⚔️ Wings of Freedom</div>
+          </div>
         </div>
+        <div class="flip-hint" id="flipHint">↻ Tap to switch theme</div>
       </div>
     </div>
   </section>
@@ -1045,8 +1384,14 @@ footer::before {
   <!-- Anime Quote Divider -->
   <div class="anime-divider reveal">
     <div class="line"></div>
-    <blockquote>"I will fulfill my duty! I will not allow anyone here to die!"</blockquote>
-    <p class="attr">— Giyu Tomioka, Demon Slayer (Water Hashira)</p>
+    <div class="quote-tanjiro">
+      <blockquote>"I will become stronger. I promise. I'll save you… I'll make sure you never suffer again!"</blockquote>
+      <p class="attr">— Tanjiro Kamado, Demon Slayer (Hinokami Kagura)</p>
+    </div>
+    <div class="quote-levi">
+      <blockquote>"Give up on your dreams and die. Lead the recruits straight into hell."</blockquote>
+      <p class="attr">— Levi Ackerman, Attack on Titan (Survey Corps Captain)</p>
+    </div>
   </div>
 
   <!-- ==================== ABOUT ==================== -->
@@ -1092,7 +1437,7 @@ footer::before {
             <h3>BSc in Computer Science &amp; Engineering</h3>
             <p>BGC Trust University Bangladesh · Session January–June 2026 · 8th Semester Running</p>
           </div>
-          <span class="gpa-badge">In Progress</span>
+          <span class="gpa-badge">7th Sem CGPA: 3.64</span>
         </div>
         <div class="edu-row reveal">
           <div class="edu-year">2020</div>
@@ -1257,8 +1602,14 @@ footer::before {
   <!-- Anime Quote Divider -->
   <div class="anime-divider reveal">
     <div class="line"></div>
-    <blockquote>"ARISE."</blockquote>
-    <p class="attr">— Sung Jinwoo, Solo Leveling (Shadow Monarch)</p>
+    <div class="quote-tanjiro">
+      <blockquote>"No matter how many people you may lose, you have no choice but to go on living."</blockquote>
+      <p class="attr">— Tanjiro Kamado, Demon Slayer</p>
+    </div>
+    <div class="quote-levi">
+      <blockquote>"The only thing we're allowed to do is believe that we won't regret the choice we made."</blockquote>
+      <p class="attr">— Levi Ackerman, Attack on Titan</p>
+    </div>
   </div>
 
   <!-- ==================== CONTACT ==================== -->
@@ -1274,17 +1625,15 @@ footer::before {
           <div class="contact-list reveal">
             <div class="c-row"><span class="c-key">Email</span><span class="c-val">altaf1fuad2@gmail.com</span></div>
             <div class="c-row"><span class="c-key">Academic Email</span><span class="c-val">arfuad@bgctub.ac.bd</span></div>
-            <div class="c-row"><span class="c-key">Phone</span><span class="c-val">+880 1646-081161</span></div>
-            <div class="c-row"><span class="c-key">Phone (Alt)</span><span class="c-val">+880 1522-118224</span></div>
           </div>
         </div>
         <div class="reveal">
           <div class="social-row">
-            <a href="https://github.com/altafur-fuad" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://www.linkedin.com/in/altafur-rahman-fuad" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:altaf1fuad2@gmail.com">Email Me →</a>
             <a href="https://www.facebook.com/share/1LbpKm7Bmy/" target="_blank" rel="noopener">Facebook</a>
             <a href="https://www.instagram.com/al.taf.ur" target="_blank" rel="noopener">Instagram</a>
-            <a href="mailto:altaf1fuad2@gmail.com">Email Me →</a>
+            <a href="https://github.com/altafur-fuad" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/altafur-rahman-fuad" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
       </div>
@@ -1294,17 +1643,29 @@ footer::before {
 </main>
 
 <footer>
-  <div class="wrap">© 2026 Altafur Rahman Fuad · Driven by Water Hashira discipline & Shadow Monarch vision.</div>
+  <div class="wrap">
+    <span class="footer-text-tanjiro">© 2026 Altafur Rahman Fuad · Forged in the flames of Hinokami Kagura 🔥</span>
+    <span class="footer-text-levi">© 2026 Altafur Rahman Fuad · Dedicating hearts to Wings of Freedom ⚔️</span>
+  </div>
 </footer>
 
 </div><!-- end content-wrap -->
 
+<!-- Theme Indicator -->
+<div class="theme-indicator" id="themeIndicator" title="Click to switch theme">
+  <span class="dot"></span>
+  <span id="themeLabel">Demon Slayer Mode</span>
+</div>
+
 <script>
 /* ============================================================
-   INTERACTIONS
+   INTERACTIONS — DEMON SLAYER x ATTACK ON TITAN DUAL THEME
    ============================================================ */
 
-// Nav toggle
+// === Theme state ===
+let isLeviTheme = false;
+
+// === Nav toggle ===
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 let menuOpen = false;
@@ -1321,7 +1682,7 @@ navLinks.querySelectorAll('a').forEach(a => {
   });
 });
 
-// Scroll spy
+// === Scroll spy ===
 const sects = document.querySelectorAll('section[id]');
 const navAs = document.querySelectorAll('.nav-links a');
 function updateNav() {
@@ -1338,7 +1699,7 @@ function updateNav() {
 }
 window.addEventListener('scroll', updateNav, { passive: true });
 
-// Typing effect
+// === Typing effect ===
 const typedEl = document.getElementById('typedText');
 const fullText = "Flutter developer & CS undergrad — building AI-powered agriculture research and full-stack mobile apps.";
 let ci = 0;
@@ -1356,7 +1717,7 @@ const heroObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 heroObs.observe(document.querySelector('.hero'));
 
-// Scroll reveal
+// === Scroll reveal ===
 const revEls = document.querySelectorAll('.reveal');
 const revObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -1365,7 +1726,7 @@ const revObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 revEls.forEach(el => revObs.observe(el));
 
-// 3D tilt on project cards
+// === 3D tilt on project cards ===
 document.querySelectorAll('[data-tilt]').forEach(card => {
   card.addEventListener('mousemove', (e) => {
     const r = card.getBoundingClientRect();
@@ -1379,19 +1740,83 @@ document.querySelectorAll('[data-tilt]').forEach(card => {
   });
 });
 
-// Portrait tilt
-const pt = document.getElementById('portraitTilt');
-if (pt) {
-  const pc = pt.closest('.portrait-card');
-  pc.addEventListener('mousemove', (e) => {
-    const r = pc.getBoundingClientRect();
-    const rx = ((e.clientY - r.top - r.height / 2) / (r.height / 2)) * -5;
-    const ry = ((e.clientX - r.left - r.width / 2) / (r.width / 2)) * 5;
-    pt.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
-  });
-  pc.addEventListener('mouseleave', () => {
-    pt.style.transform = 'rotateX(0) rotateY(0)';
-  });
+// === FLIP CARD & THEME SWITCH ===
+const portraitCard = document.getElementById('portraitCard');
+const themeFlash = document.getElementById('themeFlash');
+const katanaSlash = document.getElementById('katanaSlash');
+const themeIndicator = document.getElementById('themeIndicator');
+const themeLabel = document.getElementById('themeLabel');
+const flipHint = document.getElementById('flipHint');
+
+function switchTheme() {
+  isLeviTheme = !isLeviTheme;
+  
+  // Flip the card
+  portraitCard.classList.toggle('flipped');
+  
+  // Katana slash effect
+  katanaSlash.classList.remove('active');
+  void katanaSlash.offsetWidth; // force reflow
+  katanaSlash.classList.add('active');
+  
+  // Flash effect
+  setTimeout(() => {
+    themeFlash.classList.remove('active');
+    void themeFlash.offsetWidth;
+    themeFlash.classList.add('active');
+    
+    // Switch theme
+    document.body.classList.toggle('theme-levi');
+    
+    // Update indicator
+    themeLabel.textContent = isLeviTheme ? 'Attack on Titan Mode' : 'Demon Slayer Mode';
+    
+    // Hide hint after first flip
+    flipHint.style.opacity = '0';
+    setTimeout(() => { flipHint.style.display = 'none'; }, 300);
+  }, 200);
+}
+
+// Click/tap on portrait to flip
+portraitCard.addEventListener('click', (e) => {
+  e.preventDefault();
+  switchTheme();
+});
+
+// Also allow clicking the theme indicator
+themeIndicator.addEventListener('click', (e) => {
+  e.preventDefault();
+  switchTheme();
+});
+
+// Clean up flash/slash animations
+themeFlash.addEventListener('animationend', () => themeFlash.classList.remove('active'));
+katanaSlash.addEventListener('animationend', () => katanaSlash.classList.remove('active'));
+
+// === Floating Particles ===
+const particlesContainer = document.getElementById('particles');
+function createParticle() {
+  const particle = document.createElement('div');
+  particle.className = 'particle';
+  const size = Math.random() * 4 + 2;
+  particle.style.width = size + 'px';
+  particle.style.height = size + 'px';
+  particle.style.left = Math.random() * 100 + '%';
+  particle.style.animationDuration = (Math.random() * 8 + 6) + 's';
+  particle.style.animationDelay = (Math.random() * 5) + 's';
+  particlesContainer.appendChild(particle);
+  
+  // Remove after animation
+  setTimeout(() => {
+    if (particle.parentNode) particle.parentNode.removeChild(particle);
+  }, 16000);
+}
+
+// Spawn particles periodically
+setInterval(createParticle, 800);
+// Initial burst
+for (let i = 0; i < 15; i++) {
+  setTimeout(createParticle, i * 200);
 }
 </script>
 
