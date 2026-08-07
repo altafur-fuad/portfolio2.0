@@ -1038,6 +1038,16 @@ body.theme-levi .proj-status.live {
 .proj-link:hover::after { opacity: 1; }
 
 .proj-card.full { grid-column: 1 / -1; }
+.proj-card video,
+.proj-card iframe,
+.proj-card img.proj-thumb {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  margin: 10px 0;
+  object-fit: cover;
+  transition: border-color var(--theme-speed) ease;
+}
 
 /* ========== SKILLS ========== */
 .skills-grid {
@@ -1550,6 +1560,16 @@ body.theme-levi .particle {
           <p>Bilingual (Bangla + English) medicine information app covering vet, herbal, Unani, Ayurvedic, and English medicine, with natural ingredient details.</p>
           <span class="proj-stack">Flutter · Multi-language</span>
           <a class="proj-link" href="https://github.com/altafur-fuad/SDP1_Medilens" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+
+        <div class="proj-card reveal" data-tilt>
+          <div class="proj-top">
+            <h3>Lumio</h3>
+            <span class="proj-status">UI Design</span>
+          </div>
+          <p>Modern UI project featuring clean aesthetics, dynamic interactions, and sleek user interface design.</p>
+          <span class="proj-stack">Flutter · UI/UX Design</span>
+          <a class="proj-link" href="https://github.com/altafur-fuad/Lumio" target="_blank" rel="noopener">View on GitHub →</a>
         </div>
 
         <div class="proj-card reveal" data-tilt>
